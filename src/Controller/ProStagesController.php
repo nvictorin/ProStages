@@ -29,10 +29,11 @@ class ProStagesController extends AbstractController
         ]);
     }
 
-    public function stages(): Response
+    public function stages($id): Response
     {
         return $this->render('pro_stages/stages.html.twig', [
-            'controller_name' => 'ProStagesController',
+            'controller_name' => 'ProStagesController', 
+            'idRessource'=> $id
         ]);
     }
 }
