@@ -16,5 +16,17 @@
         <li>Your controller at <code><a href="{{ 'C:/Temp/symfony/prostages/src/Controller/ProStagesController.php'|file_link(0) }}">src/Controller/ProStagesController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/Temp/symfony/prostages/templates/pro_stages/index.html.twig'|file_link(0) }}">templates/pro_stages/index.html.twig</a></code></li>
     </ul>
+
+    <ul>
+        <li>
+            <a href="{{path('prostages_stages',{id:5})}}">Développeur informatique</a>
+        </li>
+        <li>
+            <a href="{{path('prostages_stages',{id:55})}}">Développeur web</a>
+        </li>
+        <li>
+            <a href="{{path('prostages_stages',{id:555})}}">Développeur programmation objet</a>
+        </li>
+    </ul>
 </div>
 {% endblock %}
