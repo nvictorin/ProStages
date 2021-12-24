@@ -8,10 +8,8 @@
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/monCSS.css">
     </head>
     <body>
         {% block slider %}
@@ -25,6 +23,6 @@
         {% block footer %}
             <h1>---------- FOOTER ----------</h1>
         {% endblock %}
-        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
     </body>
 </html>
