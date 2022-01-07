@@ -14,12 +14,14 @@ use App\Repository\FormationRepository;
 
 class ProStagesController extends AbstractController
 {
-    public function index(StageRepository $repositoryStage): Response
+    public function index(StageRepository $repositoryStage, FormationRepository $repositoryFormation): Response
     {
         //Récupérer les ressources enregistrées en BD
         $stages = $repositoryStage->findAll();
+        //Récupérer les ressources enregistrées en BD
+        $formations = $repositoryFormation->findAll();
         //Envoyer les ressources récupérées à la vue chargée de les afficher
-        return $this->render('pro_stages/index.html.twig',['stages'=>$stages]);
+        return $this->render('pro_stages/index.html.twig',['stages'=>$stages, 'formations'=>$formations]);
     }
 
     public function entreprises(EntrepriseRepository $repositoryEntreprise): Response

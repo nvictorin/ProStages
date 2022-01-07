@@ -30,7 +30,7 @@
         <h3>Liste des formations pour lesquelles un stage est proposé</h3>
         {% for formationCourante in formations %}
         <li class="list-group-item">
-            <a href="{{path('prostages_stages',{id:formationCourante.id})}}">
+            <a href="{{path('prostages_formations_stages',{id:formationCourante.id})}}">
                 <strong>{{formationCourante.nomlong}}</strong>
             </a>
         </li>
