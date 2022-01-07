@@ -42,24 +42,14 @@
             </tr>
         </thead>
         <tbody>
+            {% for stageCourant in stages %}
             <tr>
-                <th scope="row"><a href="{{path('prostages_stages',{id:5})}}">Développeur informatique</a></th>
+                <th scope="row"><a href="{{path('prostages_stages',{id:5})}}">{{stageCourant.Titre}}</a></th>
                 <td>Unitech</td>
                 <td>8 rue ici</td>
                 <td>DUT informatique</td>
             </tr>
-            <tr>
-                <th scope="row"><a href="{{path('prostages_stages',{id:55})}}">Développeur web</a></th>
-                <td>Jacob</td>
-                <td>5 avenue là-bas</td>
-                <td>LP Programmation Avancée</td>
-            </tr>
-            <tr>
-                <th scope="row"><a href="{{path('prostages_stages',{id:555})}}">Développeur programmation objet</a></th>
-                <td>Alstom</td>
-                <td>13 impasse par-là</td>
-                <td>LP Métiers du Numérique</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>

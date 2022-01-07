@@ -40,7 +40,7 @@ class Entreprise
     private $siteWeb;
 
     /**
-     * @ORM\OneToMany(targetEntity=Stage::class, mappedBy="stage")
+     * @ORM\OneToMany(targetEntity=Stage::class, mappedBy="entreprise")
      */
     private $stages;
 
