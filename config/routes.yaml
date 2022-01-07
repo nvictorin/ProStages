@@ -7,7 +7,7 @@ prostages_entreprises:
     controller: App\Controller\ProStagesController::entreprises
 
 prostages_entreprises_stages:
-    path: /entreprises/{nom}
+    path: /entreprises/{id}
     controller: App\Controller\ProStagesController::entreprisesStages
 
 prostages_formations:
@@ -15,7 +15,7 @@ prostages_formations:
     controller: App\Controller\ProStagesController::formations
 
 prostages_formations_stages:
-    path: /formations/{nom}
+    path: /formations/{id}
     controller: App\Controller\ProStagesController::formationsStages
 
 prostages_stages:

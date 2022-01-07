@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+
+{% block menu %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand"><i class="icon-filter"></i>Filtre : </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{path('prostages_accueil')}}">Aucun</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{path('prostages_entreprises')}}">Par entreprise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('prostages_formations')}}">Par formation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block contenu %}
+    <ul class="list-group">
+        <h3>Liste des stages proposés par l'entreprise XXX</h3>
+        {% for entrepriseCourante in stagesEntreprises %}
+        <li class="list-group-item"><strong>{{entrepriseCourante.nom}}</strong></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
