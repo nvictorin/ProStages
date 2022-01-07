@@ -71,6 +71,7 @@ class AppFixtures extends Fixture
         $s1->setMission("Pour ce stage, vôtre rôle sera d'accompagner votre tuteur dans son travail en Game Design sur le prochain jeu de la série Assassins Creed");
         $s1->setEmail("ubisoft-contact-stage@group-ubisoft.fr");
         $s1->setEntreprise($e2);
+        $s1->addFormation($f2);
         $manager->persist($s1);
         //Stage 2
         $s2 = new Stage();
@@ -78,6 +79,7 @@ class AppFixtures extends Fixture
         $s2->setMission("Pour ce stage, vôtre rôle sera d'implémenter au format Html / CSS des templates de tunnels de vente pour nos clients via le logiciel Système.io. Pas de compétences requises sur Système.io (une formation sera donnée). Seules compétences nécessaires : MAÎTRISER Html et CSS.");
         $s2->setEmail("alstom-contact-stage@group-alstom.fr");
         $s2->setEntreprise($e1);
+        $s2->addFormation($f1);
         $manager->persist($s2);
         //Stage 3
         $s3 = new Stage();
@@ -85,6 +87,7 @@ class AppFixtures extends Fixture
         $s3->setMission("Pour ce stage, vôtre rôle sera de proposer une nouvelle interface pour le site web de Daher.");
         $s3->setEmail("daher-contact-stage@group-daher.fr");
         $s3->setEntreprise($e3);
+        $s3->addFormation($f1);
         $manager->persist($s3);
         //Stage 4
         $s4 = new Stage();
@@ -92,6 +95,7 @@ class AppFixtures extends Fixture
         $s4->setMission("Pour ce stage, vôtre rôle sera de mettre en place un jeu vidéo avec Unity.");
         $s4->setEmail("ubisoft-contact-stage@group-ubisoft.fr");
         $s4->setEntreprise($e2);
+        $s4->addFormation($f3);
         $manager->persist($s4);
         //Stage 5
         $s5 = new Stage();
@@ -99,6 +103,7 @@ class AppFixtures extends Fixture
         $s5->setMission("Pour ce stage, vôtre rôle sera de coder un jeu vidéo.");
         $s5->setEmail("nintendo-contact-stage@group-nintendo.fr");
         $s5->setEntreprise($e4);
+        $s5->addFormation($f3);
         $manager->persist($s5);
         //Stage 6
         $s6 = new Stage();
@@ -106,6 +111,7 @@ class AppFixtures extends Fixture
         $s6->setMission("Pour ce stage, vôtre rôle sera de mener un travail de Web analyst.");
         $s6->setEmail("nintendo-contact-stage@group-nintendo.fr");
         $s6->setEntreprise($e4);
+        $s6->addFormation($f2);
         $manager->persist($s6);
         //Stage 7
         $s7 = new Stage();
@@ -113,6 +119,7 @@ class AppFixtures extends Fixture
         $s7->setMission("Pour ce stage, vôtre rôle sera de développer un site web en PHP.");
         $s7->setEmail("daher-contact-stage@group-daher.fr");
         $s7->setEntreprise($e3);
+        $s7->addFormation($f1);
         $manager->persist($s7);
         //Stage 8
         $s8 = new Stage();
@@ -120,6 +127,7 @@ class AppFixtures extends Fixture
         $s8->setMission("Pour ce stage, vôtre rôle sera de coder en Python.");
         $s8->setEmail("airbus-contact-stage@group-airbus.fr");
         $s8->setEntreprise($e5);
+        $s8->addFormation($f3);
         $manager->persist($s8);
         //Stage 9
         $s9 = new Stage();
@@ -127,6 +135,7 @@ class AppFixtures extends Fixture
         $s9->setMission("Pour ce stage, vôtre rôle sera d'assister le chef de projet dans son travail.");
         $s9->setEmail("alstom-contact-stage@group-alstom.fr");
         $s9->setEntreprise($e1);
+        $s9->addFormation($f1);
         $manager->persist($s9);
         //Stage 10
         $s10 = new Stage();
@@ -134,6 +143,7 @@ class AppFixtures extends Fixture
         $s10->setMission("Pour ce stage, vôtre rôle sera d'assister le chef de projet dans son travail.");
         $s10->setEmail("airbus-contact-stage@group-airbus.fr");
         $s10->setEntreprise($e5);
+        $s10->addFormation($f1);
         $manager->persist($s10);
 
         $manager->flush();
