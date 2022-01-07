@@ -38,13 +38,17 @@
                 </tr>
             </thead>
             <tbody>
-                {% for stageCourant in stages %}
-                <tr>
-                    <th scope="row"><a href="{{path('prostages_stages',{id:stageCourant.id})}}">{{stageCourant.titre}}</a></th>
-                    <td>{{stageCourant.entreprise.nom}}</td>
-                    <td>{{stageCourant.entreprise.Adresse}}</td>
-                    <td></td>
-                </tr>
+                {% for stageCourant in stagesFormation.stages %}
+                    
+                        <tr>
+                            <th scope="row">
+                                <a href="{{path('prostages_stages',{id:stageCourant.id})}}">{{stageCourant.titre}}</a>
+                            </th>
+                            <td>{{stageCourant.entreprise.nom}}</td>
+                            <td>{{stageCourant.entreprise.Adresse}}</td>
+                            <td></td>
+                        </tr>
+                    
                 {% endfor %}
             </tbody>
         </table>
