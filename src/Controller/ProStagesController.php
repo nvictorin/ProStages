@@ -17,8 +17,12 @@ class ProStagesController extends AbstractController
         $repositoryStage = $this->getDoctrine()->getRepository(Stage::class);
         //Récupérer les ressources enregistrées en BD
         $stages = $repositoryStage->findAll();
+        //Récupérer le repository de l'entité Formation
+        $repositoryFormation = $this->getDoctrine()->getRepository(Formation::class);
+        //Récupérer les ressources enregistrées en BD
+        $formations = $repositoryFormation->findAll();
         //Envoyer les ressources récupérées à la vue chargée de les afficher
-        return $this->render('pro_stages/index.html.twig',['stages'=>$stages]);
+        return $this->render('pro_stages/index.html.twig',['stages'=>$stages,'formations'=>$formations]);
     }
 
     public function entreprises(): Response
@@ -46,8 +50,8 @@ class ProStagesController extends AbstractController
         //Récupérer le repository de l'entité Stage
         $repositoryStage = $this->getDoctrine()->getRepository(Stage::class);
         //Récupérer les ressources enregistrées en BD
-        $stages = $repositoryStage->findAll();
+        $stage = $repositoryStage->find(['id'=>$id]);
         //Envoyer les ressources récupérées à la vue chargée de les afficher
-        return $this->render('pro_stages/stages.html.twig',['stages'=>$stages,'idRessource'=> $id]);
+        return $this->render('pro_stages/stages.html.twig',['stage'=>$stage]);
     }
 }
