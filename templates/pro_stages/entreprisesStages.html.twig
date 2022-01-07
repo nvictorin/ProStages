@@ -26,10 +26,27 @@
 {% endblock %}
 
 {% block contenu %}
-    <ul class="list-group">
-        <h3>Liste des stages proposés par l'entreprise XXX</h3>
-        {% for entrepriseCourante in stagesEntreprises %}
-        <li class="list-group-item"><strong>{{entrepriseCourante.nom}}</strong></li>
-        {% endfor %}
-    </ul>
+    <h3>Liste des stages proposés par l'entreprise XXX</h3>
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Entreprise</th>
+                    <th scope="col">Adresse</th>
+                    <th scope="col">Formation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stageCourant in stages %}
+                <tr>
+                    <th scope="row"><a href="{{path('prostages_stages',{id:stageCourant.id})}}">{{stageCourant.titre}}</a></th>
+                    <td>{{stageCourant.entreprise.nom}}</td>
+                    <td>{{stageCourant.entreprise.Adresse}}</td>
+                    <td></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

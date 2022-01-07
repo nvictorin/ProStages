@@ -29,7 +29,11 @@
     <ul class="list-group">
         <h3>Liste des entreprises proposant un stage</h3>
         {% for entrepriseCourante in entreprises %}
-        <li class="list-group-item"><strong>{{entrepriseCourante.nom}}</strong></li>
+            <li class="list-group-item">
+                <a href="{{path('prostages_stages',{id:entrepriseCourante.id})}}">
+                    <strong>{{entrepriseCourante.nom}}</strong>
+                </a>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}
