@@ -18,35 +18,35 @@ class AppFixtures extends Fixture
         $e1->setNom("Alstom");
         $e1->setAdresse("50 Rue du Dr Guinier, 65600 Séméac");
         $e1->setActivite("Industrie ferroviaire");
-        $e1->setSiteWeb("https://www.alstom.com/fr");
+        $e1->setSiteWeb("www.alstom.com/fr");
         $manager->persist($e1);
         //Ubisoft
         $e2 = new Entreprise();
         $e2->setNom("Ubisoft");
         $e2->setAdresse("66 - 72 Rue Marceau, 93100 Montreuil");
         $e2->setActivite("Industrie vidéoludique");
-        $e2->setSiteWeb("https://www.ubisoft.com/fr-fr/");
+        $e2->setSiteWeb("www.ubisoft.com/fr-fr/");
         $manager->persist($e2);
         //Daher
         $e3 = new Entreprise();
         $e3->setNom("Daher");
         $e3->setAdresse("Route de l'Aéroport, 65290 Louey");
         $e3->setActivite("Constructeur d'avions, équipements & systèmes aéronautiques et logistique & services");
-        $e3->setSiteWeb("https://www.daher.com/");
+        $e3->setSiteWeb("www.daher.com/");
         $manager->persist($e3);
         //Nintendo
         $e4 = new Entreprise();
         $e4->setNom("Nintendo");
         $e4->setAdresse("13 avenue Maréchal Foch, 93100 Montreuil");
         $e4->setActivite("Industrie vidéoludique");
-        $e4->setSiteWeb("https://www.nintendo.fr/");
+        $e4->setSiteWeb("www.nintendo.fr/");
         $manager->persist($e4);
         //Airbus
         $e5 = new Entreprise();
         $e5->setNom("Airbus");
         $e5->setAdresse("Airbus M01, M30, 31300 Toulouse");
         $e5->setActivite("Aéronautique");
-        $e5->setSiteWeb("https://www.airbus.com/en");
+        $e5->setSiteWeb("www.airbus.com/en");
         $manager->persist($e5);
         //FORMATIONS
         //DUT Info
@@ -157,11 +157,12 @@ class AppFixtures extends Fixture
         //Création de 10 stages avec faker
         for ($i = 0; $i < 10; $i++ ){
             $stage = new Stage();
-            $stage->setTitre($faker->jobTitle());        
-            $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+            $stage->setTitre($faker->numerify('Stage ###'));  //$faker->jobTitle() => ne fonctionne pas       
+            $stage->setMission($faker->realText($maxNbChars = 2000, $indexSize = 2));
             $stage->setEmail($faker->companyEmail());
             $stage->setEntreprise($Entreprises[$faker->numberBetween($min = 0, $max = 4)]);
             $stage->addFormation($Formations[$faker->numberBetween($min = 0, $max = 2)]);
+            $manager->persist($stage);
         }
 
 
