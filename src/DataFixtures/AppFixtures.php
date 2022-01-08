@@ -154,14 +154,14 @@ class AppFixtures extends Fixture
         $Entreprises = array($e1,$e2,$e3,$e4,$e5);
         //Nom des entreprises
         $Formations = array($f1,$f2,$f3);
-        //Création de 5 stages avec faker
-        for ($i = 0; $i < 5; $i++ ){
+        //Création de 10 stages avec faker
+        for ($i = 0; $i < 10; $i++ ){
             $stage = new Stage();
             $stage->setTitre($faker->jobTitle());        
             $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
             $stage->setEmail($faker->companyEmail());
-            $stage->setEntreprise($Entreprises[$i]);
-            $stage->addFormation($Formations[$i]);
+            $stage->setEntreprise($Entreprises[$faker->numberBetween($min = 0, $max = 4)]);
+            $stage->addFormation($Formations[$faker->numberBetween($min = 0, $max = 2)]);
         }
 
 
