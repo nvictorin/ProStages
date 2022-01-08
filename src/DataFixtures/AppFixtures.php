@@ -146,6 +146,25 @@ class AppFixtures extends Fixture
         $s10->addFormation($f1);
         $manager->persist($s10);
 
+
+
+        //Création d'un générateur de données Faker
+        $faker = \Faker\Factory::create('fr_FR');
+        //Nom des entreprises
+        $Entreprises = array($e1,$e2,$e3,$e4,$e5);
+        //Nom des entreprises
+        $Formations = array($f1,$f2,$f3);
+        //Création de 5 stages avec faker
+        for ($i = 0; $i < 5; $i++ ){
+            $stage = new Stage();
+            $stage->setTitre($faker->jobTitle());        
+            $stage->setMission($faker->realText($maxNbChars = 5000, $indexSize = 2));
+            $stage->setEmail($faker->companyEmail());
+            $stage->setEntreprise($Entreprises[$i]);
+            $stage->addFormation($Formations[$i]);
+        }
+
+
         $manager->flush();
     }
 }
