@@ -26,6 +26,7 @@
 {% endblock %}
 
 {% block contenu %}
+    </br>
     <h3>Liste des stages proposés</h3>
     <div class="container-fluid">
         <table class="table">
@@ -34,7 +35,6 @@
                     <th scope="col">Titre</th>
                     <th scope="col">Entreprise</th>
                     <th scope="col">Adresse</th>
-                    <th scope="col">Formation</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,7 +43,6 @@
                     <th scope="row"><a href="{{path('prostages_stages',{id:stageCourant.id})}}">{{stageCourant.titre}}</a></th>
                     <td>{{stageCourant.entreprise.nom}}</td>
                     <td>{{stageCourant.entreprise.Adresse}}</td>
-                    <td></td>
                 </tr>
                 {% endfor %}
             </tbody>

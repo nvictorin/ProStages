@@ -16,7 +16,10 @@
 		    <div class="col-md-12">
                 {% block entete %}
                     </br>
-                   <center><h1>ProStages</h1></center>
+                        <center><a href="{{path('prostages_accueil')}}">
+                            <img src="{{asset('/image/prostages_logo.png')}}" width="400" height="100"></img>
+                        </a></center>
+                   </br>
                 {% endblock %}
             </div>
         </div>
@@ -35,7 +38,7 @@
         <div class="row">
 		    <div class="col-md-12">
                 {% block footer %}
-                    PIED DE PAGE
+                    <!-- VIDE -->
                 {% endblock %}
             </div>
         </div>
